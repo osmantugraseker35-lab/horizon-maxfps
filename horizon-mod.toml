@@ -1,7 +1,7 @@
 id = "horizon_maxfps"
 name = "Horizon Max FPS"
-version = "0.3.0"
-description = "Optional rendering reductions for Horizon. First-person hands and held items always remain visible."
+version = "0.4.0"
+description = "Requests a 1000 FPS foreground limit without hiding or intercepting any rendered content."
 authors = ["Osman Tugra Seker"]
 license = "MIT"
 api = "0.2"
