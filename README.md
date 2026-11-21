@@ -1,22 +1,38 @@
 # Horizon Max FPS
 
-Horizon 26.3 nightly `f037744` i�in a��k kaynakl�, ba��ms�z bir performans mixin'i.
+Horizon Max FPS is an open-source native performance mod for Horizon Minecraft. It improves frame rate by allowing optional rendering work to be skipped through Horizon's official native mod API.
 
-- Windows'ta arka plan chunk/���k/mesh i��ilerinin �nceli�ini d���r�r.
-- Aktif oyunda chunk i��isi say�s�n� kare s�relerine g�re otomatik ayarlar.
-- Tak�lmada i� y�k�n� azalt�r; ak�c� karelerde i��ileri yava��a geri a�ar.
-- Men� ve d�nya y�kleme ekran�nda t�m i��ileri serbest b�rak�r.
-- Render mesafesini, g�r�nt� kalitesini veya oyun kurallar�n� de�i�tirmez.
+## Features
 
-Tam olarak sabitlenmi� Horizon ve mixin s�r�m� d���nda y�klenmez.
+- Skips first-person hand and held-item rendering by default.
+- Skips item-frame content rendering by default.
+- Includes an optional minimal-HUD mode.
+- Includes an optional extreme mode that skips all living-entity rendering.
+- Provides an in-game master switch and individual English settings.
+- Contains no cheats, automation, networking, telemetry, or data collection.
 
-## Kurulum
+## Installation
 
-Horizon Launcher'da **Mods > GitHub'dan yerel mod ekle** b�l�m�ne bu deponun
-sabit ba�lant�s�n� yap��t�r�n. Launcher uyumluluk dosyas�n� denetler ve yaln�zca
-pinlenen Horizon yap�s�nda kabul eder.
+1. Open Horizon Launcher.
+2. Find **Add a native mod from GitHub**.
+3. Paste this repository URL: `https://github.com/osmantugraseker35-lab/horizon-maxfps`
+4. Select **Add from GitHub**.
+5. Start Horizon and open the mod settings to adjust the performance options.
+
+## Recommended settings
+
+The two safe performance options are enabled by default. Enable the extreme options only when you want the highest possible FPS and accept that parts of the game view will be hidden.
+
+## Compatibility
+
+- Horizon game version: 26.3
+- Horizon native API: 0.2
+- Client-side only
 
 ## License
 
-MIT - Copyright (c) 2026 Osman Tugra Seker.
+Licensed under the MIT License. You may use, study, modify, and redistribute the source code under the license terms.
 
+## Author
+
+Osman Tugra Seker
