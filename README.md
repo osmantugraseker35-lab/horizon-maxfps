@@ -1,31 +1,32 @@
 # Horizon Max FPS
 
-Horizon Max FPS is an open-source native client mod for Horizon Minecraft. Version 0.3.0 fixes the missing first-person hand and removes misleading default visual reductions.
+Horizon Max FPS is an open-source native client mod for Horizon Minecraft.
 
-## What version 0.3.0 fixes
+## Version 0.4.0
 
-- The first-person hand and held item are always rendered.
-- No visual feature is disabled by default.
-- Every aggressive rendering reduction is optional.
-- Old saved settings can no longer hide the first-person hand.
-- All mod text and settings are in English.
+This release removes every rendering callback from the previous versions. Those callbacks could reduce performance because they ran repeatedly during entity and GUI rendering.
 
-## Optional performance modes
+The mod now does one focused job:
 
-- **Item-frame contents:** useful only in areas containing many item frames.
-- **Minimal HUD:** hides the entire HUD and may provide a small gain on weak systems.
-- **Hide living entities:** an extreme diagnostic option; it hides mobs and players.
+- Requests a 1000 FPS foreground limit.
+- Never hides the first-person hand or held item.
+- Never hides entities, the HUD, item frames, blocks, particles, or effects.
+- Never runs per-entity or per-frame rendering cancellation code.
+- Uses no networking, telemetry, automation, or data collection.
 
-These options reduce rendering work only in the situations they affect. They do not overclock the computer, change Horizon's renderer, or guarantee a higher FPS number. At very high frame rates, results can be smaller than normal measurement variation.
+## Important performance note
 
-## Installation or update
+A frame-rate limit is not the same as generated FPS. The mod can request a 1000 FPS ceiling, but the actual result still depends on the CPU, GPU, resolution, render distance, world complexity, other mods, and Horizon itself. It cannot guarantee 1000 generated frames per second.
 
-1. Open Horizon Launcher.
-2. Remove the older Horizon Max FPS entry if it is still installed.
-3. Add this repository:
+## Clean update
+
+1. Fully close Horizon and Minecraft.
+2. Remove the older Horizon Max FPS installation.
+3. Add this repository again:
    `https://github.com/osmantugraseker35-lab/horizon-maxfps`
-4. Restart Horizon.
-5. Leave all optional modes disabled for normal gameplay.
+4. Start Horizon.
+5. Make sure VSync is disabled in the game settings.
+6. Set the normal game frame-rate limit to its highest available value.
 
 ## Compatibility
 
@@ -35,7 +36,7 @@ These options reduce rendering work only in the situations they affect. They do 
 
 ## License
 
-MIT License. You may use, study, modify, and redistribute the source code under the license terms.
+MIT License.
 
 ## Author
 
