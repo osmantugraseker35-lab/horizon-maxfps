@@ -1,7 +1,7 @@
 id = "horizon_maxfps"
 name = "Horizon Max FPS"
-version = "0.4.0"
-description = "Requests a 1000 FPS foreground limit without hiding or intercepting any rendered content."
+version = "0.5.0"
+description = "Safety release with no runtime hooks. Remove the mod for completely stock Horizon performance."
 authors = ["Osman Tugra Seker"]
 license = "MIT"
 api = "0.2"
