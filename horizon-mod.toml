@@ -1,7 +1,7 @@
 id = "horizon_maxfps"
 name = "Horizon Max FPS"
-version = "0.2.0"
-description = "Improves FPS by skipping optional first-person, item-frame, HUD, and living-entity rendering."
+version = "0.3.0"
+description = "Optional rendering reductions for Horizon. First-person hands and held items always remain visible."
 authors = ["Osman Tugra Seker"]
 license = "MIT"
 api = "0.2"
