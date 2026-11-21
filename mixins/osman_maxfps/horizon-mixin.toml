@@ -1,0 +1,45 @@
+[mod]
+id = "osman_maxfps"
+version = "0.1.0"
+priority = 110
+
+[compatibility]
+horizon_revision = "f037744a79f9982c47876f49c5a3067279f88706"
+
+[[module]]
+id = "pool"
+file = "crates/horizon-threads/src/lib.rs"
+name = "osman_maxfps_pool"
+source = "pool.rs"
+visibility = "pub"
+
+[[module]]
+id = "state"
+file = "crates/horizon-client/src/game.rs"
+name = "osman_maxfps_state"
+source = "state.rs"
+
+[[injection]]
+id = "worker_gate"
+kind = "HEAD"
+target = "horizon_threads::jobs::choose"
+helper = "gate.rs"
+bindings = []
+
+[[injection]]
+id = "worker_priority"
+kind = "HEAD"
+target = "horizon_threads::behind_server"
+helper = "behind.rs"
+bindings = []
+
+[[injection]]
+id = "adaptive_frame"
+kind = "HEAD"
+target = "horizon_client::game::native_hooks::Game<'_>::native_frame"
+helper = "frame.rs"
+bindings = [
+  { name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" },
+  { name = "elapsed", ty = "std::time::Duration", value = "elapsed" },
+]
+
