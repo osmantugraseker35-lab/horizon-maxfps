@@ -1,0 +1,14 @@
+id = "horizon_maxfps"
+name = "Horizon Max FPS"
+version = "0.2.0"
+description = "Improves FPS by skipping optional first-person, item-frame, HUD, and living-entity rendering."
+authors = ["Osman Tugra Seker"]
+license = "MIT"
+api = "0.2"
+side = "client"
+capabilities = ["registries"]
+
+[native]
+game = "26.3"
+horizon = "f037744a79f9982c47876f49c5a3067279f88706"
+mixins = "e59da9094f0c2fdda6c627fe9eff22dec6a906f0"
