@@ -1,32 +1,14 @@
-//! Horizon Max FPS requests a high foreground frame-rate limit without
-//! intercepting rendering. It never hides or cancels visual elements.
+//! Horizon Max FPS safety release.
+//!
+//! This build deliberately registers no runtime rendering or frame-rate hooks.
+//! It exists only to replace older installations that could reduce performance.
 
-use mod_api::{
-    ClientHost, FramerateLimitEvent, Hooks, Registrar, RegistrationContext, SettingSpec,
-};
-
-const TARGET_FPS: i32 = 1000;
+use mod_api::{Hooks, Registrar, RegistrationContext};
 
 #[derive(Default)]
 struct MaxFpsMod;
 
 #[mod_api::horizon_mod]
 impl Hooks for MaxFpsMod {
-    fn register(&self, registrar: &mut dyn Registrar, _context: &RegistrationContext) {
-        let _ = registrar.register_setting(SettingSpec::toggle(
-            "enable_mod",
-            "Request a 1000 FPS limit",
-            true,
-        ));
-    }
-
-    fn framerate_limit(&self, host: &dyn ClientHost, event: &mut FramerateLimitEvent) {
-        if !host.setting_bool("enable_mod").unwrap_or(true) {
-            return;
-        }
-
-        if event.focused && !event.minimized {
-            event.limit = event.limit.max(TARGET_FPS);
-        }
-    }
+    fn register(&self, _registrar: &mut dyn Registrar, _context: &RegistrationContext) {}
 }
