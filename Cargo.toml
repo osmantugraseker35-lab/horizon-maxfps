@@ -1,0 +1,9 @@
+[package]
+name = "horizon-maxfps"
+version = "0.2.0"
+edition = "2024"
+license = "MIT"
+description = "A configurable rendering reduction mod for maximum FPS in Horizon Minecraft."
+
+[dependencies]
+horizon-mod-api = { path = ".horizon/sdk/api/crates/horizon-mod-api" }
